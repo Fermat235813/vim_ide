@@ -11,6 +11,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 " Plugins will be downloaded under the specified directory.
 call vundle#begin('~/.vim/plugged')
 
+" General Vundle Plugin for basic functions
 Plugin 'VundleVim/Vundle.vim'
 
 " List ends here. Plugins become visible to Vim after this call.
