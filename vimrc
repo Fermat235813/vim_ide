@@ -13,6 +13,8 @@ call vundle#begin('~/.vim/plugged')
 
 " General Vundle Plugin for basic functions
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+
 
 " List ends here. Plugins become visible to Vim after this call.
 call vundle#end()
@@ -28,6 +30,9 @@ set nu
 
 " Enable syntax highlighting
 syntax on
+
+" everything to be utf-8
+set encoding=utf-8
 
 " c: Automatically break comments using the textwidth value.
 " r: Automatically insert the comment leader when hitting <Enter> in insert mode.
@@ -75,8 +80,8 @@ set noswapfile
 set autoread
 
 " Enable spell checking
-set spell
-set spelllang=en
+" set spell
+" set spelllang=en
 
 " Highlight the current line
 set cursorline
@@ -127,3 +132,27 @@ set foldclose=all
 
 " Open folds upon all motion events
 set foldopen=all
+
+" ------------------------------------------------------------
+"  PluginConfig
+" ------------------------------------------------------------
+"
+" Plugin: preservim/nerdtree
+autocmd FileType nerdtree setlocal nolist
+let g:NERDTreeWinSize = 40
+nnoremap <C-n> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.o$', '\.obj$', '\.a$', '\.so$', '\.out$', '\.git$']
+let NERDTreeShowHidden = 1
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+\ 'Modified'  :'✹',
+\ 'Staged'    :'✚',
+\ 'Untracked' :'✭',
+\ 'Renamed'   :'➜',
+\ 'Unmerged'  :'═',
+\ 'Deleted'   :'✖',
+\ 'Dirty'     :'✗',
+\ 'Ignored'   :'☒',
+\ 'Clean'     :'✔︎',
+\ 'Unknown'   :'?',
+\ }
+" }}}"
