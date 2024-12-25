@@ -66,7 +66,7 @@ set listchars=tab:>-,trail:•
 " Set text width
 set textwidth=80
 " Use system clipboard
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
 
 " This maps the '<' and '>' keys in visual mode to shift the selected text one
 " shift width to the left or right and reselect the shifted text.
