@@ -171,7 +171,10 @@ let c_space_errors = 1
 
 " Load vim plugins {{{
 call plug#begin()
+
 	Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' } " File explorer
+	Plug 'valloric/youcompleteme'
+
 call plug#end()
 " }}}
 
@@ -180,3 +183,32 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 	\| :PlugInstall --sync
 \| endif
 
+
+" Plugin: preservim/nerdtree {{{
+autocmd FileType nerdtree setlocal nolist
+let g:NERDTreeWinSize = 40
+nnoremap <C-n> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.o$', '\.obj$', '\.a$', '\.so$', '\.out$', '\.git$']
+let NERDTreeShowHidden = 1
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+\ 'Modified'  :'✹',
+\ 'Staged'    :'✚',
+\ 'Untracked' :'✭',
+\ 'Renamed'   :'➜',
+\ 'Unmerged'  :'═',
+\ 'Deleted'   :'✖',
+\ 'Dirty'     :'✗',
+\ 'Ignored'   :'☒',
+\ 'Clean'     :'✔︎',
+\ 'Unknown'   :'?',
+\ }
+" }}}
+
+
+" Settings: python3 {{{
+" Enable Python3 support
+let g:python3_host_prog = '/usr/bin/python3'
+
+" Add the directory containing openai_chat.py to the runtime path
+set runtimepath+=~/.config/nvim/python/
+" }}}
