@@ -174,6 +174,8 @@ call plug#begin()
 
 	Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' } " File explorer
 	Plug 'valloric/youcompleteme'
+	Plug 'ambv/black'
+	
 
 call plug#end()
 " }}}
