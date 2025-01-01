@@ -173,12 +173,15 @@ let c_space_errors = 1
 call plug#begin()
 
 	Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' } " File explorer
-	Plug 'valloric/youcompleteme'
-	Plug 'ambv/black'
-	
+	Plug 'valloric/youcompleteme' " Code complete
+	Plug 'ambv/black' " Code formatter
+    Plug 'puremourning/vimspector' " Debugger integration
+    Plug 'vim-airline/vim-airline' " Visual status line indicators
+    Plug 'vim-airline/vim-airline-themes' " Themes for airline
 
 call plug#end()
 " }}}
+
 
 " Update all plugins
 autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -207,10 +210,14 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
 " }}}
 
 
-" Settings: python3 {{{
-" Enable Python3 support
-let g:python3_host_prog = '/usr/bin/python3'
-
-" Add the directory containing openai_chat.py to the runtime path
-set runtimepath+=~/.config/nvim/python/
+" Plugin: vim-airline/vim-airline {{{
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'deus'
+" Enable wordcount
+let g:airline#extensions#wordcount#enabled = 1
+" Add notes to filetypes
+let g:airline#extensions#wordcount#filetypes = 'notes|help|markdown|rst|org|text|asciidoctor|tex|mail|plaintext|context'
 " }}}
+
+
+
